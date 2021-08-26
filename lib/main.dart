@@ -1,4 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:task1/CustomAnimatedContainer.dart';
+import 'package:task1/CustomFading.dart';
+import 'package:task1/CustomFutureBuilder.dart';
+import 'package:task1/CustomTable.dart';
 import 'package:task1/Header.dart';
 import 'package:task1/AppDrawer.dart';
 import 'MyRow.dart';
@@ -23,12 +27,14 @@ class MyApp extends StatelessWidget {
 
 class MyHomePage extends StatefulWidget {
   MyHomePage({Key key}) : super(key: key);
-
+  var color = Colors.red;
+  var txt = "Start Animation";
   @override
   _MyHomePageState createState() => _MyHomePageState();
 }
 
 class _MyHomePageState extends State<MyHomePage> {
+
 
   @override
   Widget build(BuildContext context) {
@@ -38,7 +44,11 @@ class _MyHomePageState extends State<MyHomePage> {
         child: Column(
           children: [
             Header(),
-            MyRow(image1: "assets/images/1.jpg",
+            //CustomFutureBuilder(),
+            //CustomFading(),
+            CustomAnimatedContainer(txt: widget.txt, color: widget.color,),
+            CustomTable(),
+            /*MyRow(image1: "assets/images/1.jpg",
                   text1: "مجلة الاقتصاد",
                   image2: "assets/images/2.jpg",
                   text2: "مجلة التكنولوجيا"
@@ -62,7 +72,7 @@ class _MyHomePageState extends State<MyHomePage> {
                 text1: "مجلة العلوم",
                 image2: "assets/images/10.jpg",
                 text2: "مجلة حواء"
-            ),
+            ),*/
           ],
         ),
 
